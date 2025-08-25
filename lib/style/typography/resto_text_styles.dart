@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 class RestoTextStyles {
   static const TextStyle _commonStyle = TextStyle(
-    fontFamily: 'IBMPlexSansCondensed',
+    fontFamily: 'Poppins',
   );
 
   /// displayLarge Text Style

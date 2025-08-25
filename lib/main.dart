@@ -1,3 +1,4 @@
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:s2/data/api/api_services.dart';
@@ -9,6 +10,7 @@ import 'package:s2/screen/detail/detail_screen.dart';
 import 'package:s2/screen/main/main_screen.dart';
 import 'package:s2/static/navigation_route.dart';
 import 'package:s2/style/theme/resto_theme.dart';
+
 
 void main() {
   runApp(
@@ -45,9 +47,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Restaurant App',
-      theme: RestoTheme.lightTheme,
-      darkTheme: RestoTheme.darkTheme,
       themeMode: ThemeMode.system,
+      theme: RestoTheme.lightTheme.copyWith(
+        textTheme: GoogleFonts.poppinsTextTheme(),
+      ),
+      darkTheme: RestoTheme.darkTheme.copyWith(
+        textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme),
+      ),
       initialRoute: NavigationRoute.mainRoute.name,
       routes: {
         NavigationRoute.mainRoute.name: (context) => const MainScreen(),
